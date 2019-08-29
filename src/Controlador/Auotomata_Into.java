@@ -12,7 +12,7 @@ import Modelo.Caracteres;
  * @author Mauricio
  */
 public class Auotomata_Into {
-
+ //.......
     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
