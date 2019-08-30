@@ -5,6 +5,8 @@
  */
 package analizador;
 
+import Vista.VentanaPrincipal;
+
 /**
  *
  * @author Mauricio
@@ -16,6 +18,8 @@ public class Analizador {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        VentanaPrincipal ventana = new VentanaPrincipal();
+        ventana.setVisible(true);
     }
     
 }

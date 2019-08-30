@@ -12,8 +12,8 @@ import Modelo.Lexema;
  *
  * @author Acer
  */
-public class Automata_Tipo_Dato_Text {
-    int cont;
+public class Automata_Comparacion_NOT {
+     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -23,9 +23,9 @@ public class Automata_Tipo_Dato_Text {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-           if(aceptada){
+          if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("text","Tipo de dato");
+            return new Lexema ("not","Operador_comparacion");
         }else{
            return null ; 
         }
@@ -35,7 +35,7 @@ public class Automata_Tipo_Dato_Text {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -53,25 +53,7 @@ public class Automata_Tipo_Dato_Text {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                cont++;/*incrememnto mi contador*/
-
-                q2();
-
-            } else {
-
-                aceptada = false;
-
-            }
-        }
-    }
-
-    public void q2() {
-
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == 'x') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -84,6 +66,8 @@ public class Automata_Tipo_Dato_Text {
             }
         }
     }
+
+ 
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -96,11 +80,10 @@ public class Automata_Tipo_Dato_Text {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            }
-             else if(car[cont]== ' '){
+            } else if (car[cont] == ' ') {
                 cont++;
-                aceptada=true;
+                aceptada = true;
             }
         }
-    }
+    } 
 }

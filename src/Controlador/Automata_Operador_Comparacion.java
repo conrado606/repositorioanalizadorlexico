@@ -12,8 +12,8 @@ import Modelo.Lexema;
  *
  * @author Acer
  */
-public class Automata_Condicional_Or {
-           int cont;
+public class Automata_Operador_Comparacion {
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -22,38 +22,19 @@ public class Automata_Condicional_Or {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
-        q0();
-         if(aceptada){
+        qF();
+        if (aceptada) {
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("or","condicional");
-        }else{
-           return null ; 
-        }
-    }
-    
-    
-      public void q0() {
-
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                cont++;/*incrememnto mi contador*/
-
-                qF();
-
-            } else {
-
-                aceptada = false;
-
-            }
+            return new Lexema("Operador", "Comparacion");
+        } else {
+            return null;
         }
     }
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '|' || car[cont] == '!' || car[cont] == '&') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
@@ -61,12 +42,10 @@ public class Automata_Condicional_Or {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            }
-              else if(car[cont]== ' '){
+            } else if (car[cont] == ' ') {
                 cont++;
-                aceptada=true;
+                aceptada = true;
             }
-            
         }
     }
 }
