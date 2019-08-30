@@ -25,7 +25,7 @@ public class Automata_Condicional_Or {
         q0();
          if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("or","condicional");
+            return new Lexema ("or","Operador Logico");
         }else{
            return null ; 
         }

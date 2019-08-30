@@ -40,10 +40,7 @@ public class Automata_Operador_Logico {
                 aceptada = true;
                 cont++;
                 qF();
-            } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
-                aceptada = false;
-                cont--;
-            }
+            } 
              else if(car[cont]== ' '){
                 cont++;
                 aceptada=true;
