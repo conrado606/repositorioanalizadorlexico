@@ -465,4 +465,271 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
+
+    public void Automata_Exception() {
+        Automata_Exception driver = new Automata_Exception();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_False() {
+        Automata_False driver = new Automata_False();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_FindIterable() {
+        Automata_FindIterable driver = new Automata_FindIterable();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Foreach() {
+        Automata_Foreach driver = new Automata_Foreach();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Foreing() {
+        Automata_Foreing driver = new Automata_Foreing();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Forname() {
+        Automata_Forname driver = new Automata_Forname();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_From() {
+        Automata_From driver = new Automata_From();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Ignore() {
+        Automata_Ignore driver = new Automata_Ignore();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Index() {
+        Automata_Index driver = new Automata_Index();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Inner() {
+        Automata_Inner driver = new Automata_Inner();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Insert() {
+        Automata_Insert driver = new Automata_Insert();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Iterable() {
+        Automata_Iterable driver = new Automata_Iterable();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Key() {
+        Automata_Key driver = new Automata_Key();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Left() {
+        Automata_Left driver = new Automata_Left();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Lock() {
+        Automata_Lock driver = new Automata_Lock();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Null() {
+        Automata_Null driver = new Automata_Null();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Password() {
+        Automata_Password driver = new Automata_Password();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Primary() {
+        Automata_Primary driver = new Automata_Primary();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Procedure() {
+        Automata_Procedure driver = new Automata_Procedure();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Public() {
+        Automata_Public driver = new Automata_Public();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Read() {
+        Automata_Read driver = new Automata_Read();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_References() {
+        Automata_References driver = new Automata_References();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Rename() {
+        Automata_Rename driver = new Automata_Rename();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Require() {
+        Automata_Require driver = new Automata_Require();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Resultset() {
+        Automata_Resultset driver = new Automata_Resultset();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Return() {
+        Automata_Return driver = new Automata_Return();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Right() {
+        Automata_Right driver = new Automata_Right();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Role() {
+        Automata_Role driver = new Automata_Role();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+      public void Automata_Schema() {
+        Automata_Schema driver = new Automata_Schema();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+      public void Automata_Select() {
+        Automata_Select driver = new Automata_Select();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+       public void Automata_Sql() {
+        Automata_Sql driver = new Automata_Sql();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+        public void Automata_System() {
+        Automata_System driver = new Automata_System();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+          public void Automata_Table() {
+        Automata_Table driver = new Automata_Table();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+          public void Automata_This() {
+        Automata_This driver = new Automata_This();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
 }
