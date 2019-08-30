@@ -207,6 +207,10 @@ public class Automata_References {
                 aceptada = false;
                 cont--;
             }
+            else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
+            }
         }
     }
 }

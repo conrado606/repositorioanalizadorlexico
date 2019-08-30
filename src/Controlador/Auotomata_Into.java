@@ -25,12 +25,11 @@ public class Auotomata_Into {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-        if (aceptada) {
+         if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-
-            return new Lexema("into", "Palabra reservada");
-        } else {
-            return null;
+            return new Lexema ("into","palabra reservada");
+        }else{
+           return null ; 
         }
 
     }
@@ -100,10 +99,10 @@ public class Auotomata_Into {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            }
         } else if (car[cont] == ' ') {
             cont++;
             aceptada = true;
         }
+    }
     }
 }

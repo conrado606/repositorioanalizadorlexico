@@ -260,11 +260,12 @@ public class Automara_DriverManager {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            }
-        } else if (car[cont] == ' ') {
-            cont++;
-            aceptada = true;
 
+            } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
+
+            }
         }
     }
 }

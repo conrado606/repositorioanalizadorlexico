@@ -13,14 +13,14 @@ import Modelo.Lexema;
  * @author Mauricio
  */
 public class Automata_As {
-    
-            int cont;
+
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
     public Lexema inicio(Caracteres flujo) {
-         cont = flujo.getPosActual();
+        cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
@@ -32,9 +32,8 @@ public class Automata_As {
             return null;
         }
     }
-    
-    
-      public void q0() {
+
+    public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -63,7 +62,11 @@ public class Automata_As {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
+
     }
 }

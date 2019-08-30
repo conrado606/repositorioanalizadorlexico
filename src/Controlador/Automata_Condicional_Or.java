@@ -62,7 +62,7 @@ public class Automata_Condicional_Or {
                 aceptada = false;
                 cont--;
             }
-              else if(car[cont]== ' '){
+              else if(car[cont] == ' '){
                 cont++;
                 aceptada=true;
             }

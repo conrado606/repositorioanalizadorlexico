@@ -13,7 +13,8 @@ import Modelo.Lexema;
  * @author Mauricio
  */
 public class Automata_Alter {
-        int cont;
+
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -115,6 +116,9 @@ public class Automata_Alter {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
     }

@@ -7,6 +7,7 @@ package Controlador;
 
 import Modelo.Caracteres;
 import Modelo.Lexema;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +60,9 @@ public class Analizador_Lexico {
             Automata_Tipo_Dato_Integer();
             Automata_Tipo_Dato_Text();
             Automata_Tipo_Dato_Varchar();
-
+            //__________________________________________
+            Automata_Into();
+            Automata_Condition();
         }
 
     }
@@ -179,6 +182,9 @@ public class Analizador_Lexico {
     public void Automata_Tipo_Dato_Bit() {
         Automata_Tipo_Dato_Bit bit = new Automata_Tipo_Dato_Bit();
         lexe = bit.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
 
     }
 
@@ -246,4 +252,217 @@ public class Analizador_Lexico {
         }
     }
 
+    public void Automata_Into() {
+        Auotomata_Into into = new Auotomata_Into();
+        lexe = into.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_DriverManager() {
+        Automara_DriverManager driver = new Automara_DriverManager();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Alter() {
+        Automata_Alter driver = new Automata_Alter();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Analyze() {
+        Automata_Analyze driver = new Automata_Analyze();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_As() {
+        Automata_As driver = new Automata_As();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Before() {
+        Automata_Before driver = new Automata_Before();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Between() {
+        Automata_Between driver = new Automata_Between();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Cascade() {
+        Automata_Cascade driver = new Automata_Cascade();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Catch() {
+        Automata_Catch driver = new Automata_Catch();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Change() {
+        Automata_Change driver = new Automata_Change();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Check() {
+        Automata_Check driver = new Automata_Check();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Class() {
+        Automata_Class driver = new Automata_Class();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Column() {
+        Automata_Column driver = new Automata_Column();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Connect() {
+        Automata_Connect driver = new Automata_Connect();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Condition() {
+        Automata_Condition driver = new Automata_Condition();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Connection() {
+        Automata_Connection driver = new Automata_Connection();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Constraint() {
+        Automata_Constraint driver = new Automata_Constraint();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Convert() {
+        Automata_Convert driver = new Automata_Convert();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Create() {
+        Automata_Create driver = new Automata_Create();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_DataBase() {
+        Automata_DataBase driver = new Automata_DataBase();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Default() {
+        Automata_Default driver = new Automata_Default();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Delete() {
+        Automata_Delete driver = new Automata_Delete();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Describe() {
+        Automata_Describe driver = new Automata_Describe();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Distinct() {
+        Automata_Distinct driver = new Automata_Distinct();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Drop() {
+        Automata_Drop driver = new Automata_Drop();
+        lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
 }

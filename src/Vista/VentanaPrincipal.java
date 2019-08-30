@@ -74,7 +74,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         
         Caracteres ca = new Caracteres(0, caracteres);
         Analizador_Lexico al = new Analizador_Lexico();
-        al.Analizar(ca);
+        al.analizar(ca);
         
         for (int i = 0; i < al.getListLexema().size(); i++) {
             System.err.println(" Token" + " - " + al.getListLexema().get(i).getToken()
