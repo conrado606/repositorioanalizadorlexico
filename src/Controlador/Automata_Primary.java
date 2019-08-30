@@ -148,6 +148,9 @@ public class Automata_Primary {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            }else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
     }

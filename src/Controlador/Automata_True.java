@@ -100,6 +100,10 @@ public class Automata_True {
                 aceptada = false;
                 cont--;
             }
+            else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
+            }
         }
     }
 }

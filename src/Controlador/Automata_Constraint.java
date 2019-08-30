@@ -206,6 +206,9 @@ public class Automata_Constraint {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            }else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
     }

@@ -13,7 +13,8 @@ import Modelo.Lexema;
  * @author Mauricio
  */
 public class Automata_Before {
-     int cont;
+
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -103,7 +104,8 @@ public class Automata_Before {
             }
         }
     }
-      public void q4() {
+
+    public void q4() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -119,7 +121,7 @@ public class Automata_Before {
 
             }
         }
-      }
+    }
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -132,6 +134,9 @@ public class Automata_Before {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
             }
         }
     }
