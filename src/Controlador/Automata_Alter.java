@@ -24,12 +24,20 @@ public class Automata_Alter {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
         if (aceptada) {
             Analizador_Lexico.flujo.setPosActual(cont);
 
             return new Lexema("alter", "Palabra reservada");
         } else {
             return null;
+=======
+         if(aceptada){
+            Analizador_Lexico.flujo.setPosActual(cont);
+            return new Lexema ("alter","Palabra Reservada");
+        }else{
+           return null ; 
+>>>>>>> termine
         }
     }
 
@@ -117,6 +125,10 @@ public class Automata_Alter {
                 aceptada = false;
                 cont--;
             } else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
+            }
+            else if (car[cont] == ' ') {
                 cont++;
                 aceptada = true;
             }

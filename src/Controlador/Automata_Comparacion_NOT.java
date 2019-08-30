@@ -25,7 +25,7 @@ public class Automata_Comparacion_NOT {
         q0();
           if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("not","Operador_comparacion");
+            return new Lexema ("not","Operador Logico");
         }else{
            return null ; 
         }
