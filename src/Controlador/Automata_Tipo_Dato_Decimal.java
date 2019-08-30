@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Decimal {
         q0();
            if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("decimal","condicional");
+            return new Lexema ("decimal","Tipo de dato");
         }else{
            return null ; 
         }

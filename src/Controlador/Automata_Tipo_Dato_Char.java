@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Char {
         q0();
            if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("char","condicional");
+            return new Lexema ("char","tipo de dato");
         }else{
            return null ; 
         }

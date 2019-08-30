@@ -12,8 +12,8 @@ import Modelo.Lexema;
  *
  * @author Acer
  */
-public class Automata_Operador_Aritmetico {
-     int cont;
+public class Automata_Operador_Comparacion {
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -25,7 +25,7 @@ public class Automata_Operador_Aritmetico {
         qF();
         if (aceptada) {
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema("Operador", "operador_aritmetico");
+            return new Lexema("Operador", "Comparacion");
         } else {
             return null;
         }
@@ -34,8 +34,7 @@ public class Automata_Operador_Aritmetico {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == '+' || car[cont] == '-' || car[cont] == '/'
-                   || car[cont] == '*' || car[cont] == '%' ) {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '|' || car[cont] == '!' || car[cont] == '&') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

@@ -12,8 +12,8 @@ import Modelo.Lexema;
  *
  * @author Acer
  */
-public class Automata_Tipo_Dato_Text {
-    int cont;
+public class Automata_Comparacion_LIKE {
+     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Text {
         q0();
            if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("text","Tipo de dato");
+            return new Lexema ("like","Operador_comparacion");
         }else{
            return null ; 
         }
@@ -35,7 +35,7 @@ public class Automata_Tipo_Dato_Text {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'l') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -53,7 +53,7 @@ public class Automata_Tipo_Dato_Text {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -71,7 +71,7 @@ public class Automata_Tipo_Dato_Text {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'x') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'k') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -88,7 +88,7 @@ public class Automata_Tipo_Dato_Text {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
@@ -97,9 +97,9 @@ public class Automata_Tipo_Dato_Text {
                 aceptada = false;
                 cont--;
             }
-             else if(car[cont]== ' '){
+             else if (car[cont] == ' ') {
                 cont++;
-                aceptada=true;
+                aceptada = true;
             }
         }
     }

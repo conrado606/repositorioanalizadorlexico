@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Float {
         q0();
            if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("float","condicional");
+            return new Lexema ("float","Tipo de dato");
         }else{
            return null ; 
         }

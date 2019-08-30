@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Varchar {
         q0();
            if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("varchar","condicional");
+            return new Lexema ("varchar","Tipo de dato");
         }else{
            return null ; 
         }

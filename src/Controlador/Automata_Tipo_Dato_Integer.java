@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Integer {
         q0();
           if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("integer","condicional");
+            return new Lexema ("integer","Tipo de dato");
         }else{
            return null ; 
         }

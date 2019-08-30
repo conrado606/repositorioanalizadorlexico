@@ -13,7 +13,7 @@ import Modelo.Lexema;
  * @author Acer
  */
 public class Automata_Tipo_Dato_Datatext {
-     int cont;
+       int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -25,7 +25,7 @@ public class Automata_Tipo_Dato_Datatext {
         q0();
           if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("data_text","condicional");
+            return new Lexema ("Data Text","Tipo de dato");
         }else{
            return null ; 
         }
@@ -48,8 +48,7 @@ public class Automata_Tipo_Dato_Datatext {
             }
         }
     }
-
-    public void q1() {
+            public void q1() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -65,9 +64,8 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-    }
-
-    public void q2() {
+            }
+            public void q2() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -83,9 +81,8 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-    }
-
-    public void q3() {
+            }
+            public void q3() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -101,13 +98,12 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-    }
-
-    public void q4() {
+            }
+            public void q4() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == ' ') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -119,13 +115,13 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-    }
+            }
 
-    public void q5() {
+           public void q5() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -137,9 +133,25 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-    }
+        }
+           public void q6() {
 
-    public void q6() {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
+                cont++;/*incrememnto mi contador*/
+
+                q7();
+
+            } else {
+
+                aceptada = false;
+
+            }
+        }
+           }
+           public void q7() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -155,9 +167,7 @@ public class Automata_Tipo_Dato_Datatext {
 
             }
         }
-
-    }
-
+            }
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
