@@ -83,37 +83,28 @@ public class Analizador_Lexico {
             //__________________________________________
             Automata_Into();
             Automata_Condition();
-            
-              Automata_Diferente();
 
-    Automata_OP_logico();
+            Automata_Diferente();
 
-    Automata_Operador_Logico();
+            Automata_OP_logico();
 
-    Automata_Logico_XOR();
+            Automata_Operador_Logico();
+
+            Automata_Logico_XOR();
         }
 
     }
 
     // ---------OPERADORES LOGICOS --------------------
-  
-
     //-----------PALABRAS RESERVADAS ----------------------
-
-
-
-    
-     public void Automata_Diferente() {
+    public void Automata_Diferente() {
         Automata_Diferente delimitadores = new Automata_Diferente();
         lexe = delimitadores.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
-    
-     
-      
-}
-     
+
+    }
 
     public void Automata_Delimitadores() {
         Automata_Delimitadores delimitadores = new Automata_Delimitadores();
@@ -122,15 +113,14 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-    
-     public void Automata_OP_logico() {
+
+    public void Automata_OP_logico() {
         Automata_OP_logico delimitadores = new Automata_OP_logico();
         lexe = delimitadores.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-    
 
     public void Automata_Comparacion_NOT() {
         Automata_Comparacion_NOT not = new Automata_Comparacion_NOT();
@@ -140,8 +130,7 @@ public class Analizador_Lexico {
         }
     }
 
-    
-    public void Automata_Logico_XOR () {
+    public void Automata_Logico_XOR() {
         Automata_Logico_XOR xor = new Automata_Logico_XOR();
         lexe = xor.inicio(flujo);
         if (lexe != null) {
@@ -181,8 +170,6 @@ public class Analizador_Lexico {
         }
     }
 
-  
-
     public void Automata_Operador_Comparacion() {
         Automata_Operador_Comparacion comparacion = new Automata_Operador_Comparacion();
         lexe = comparacion.inicio(flujo);
@@ -190,7 +177,6 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-
 
     public void Automata_Parentesis() {
         Automata_Parentesis p = new Automata_Parentesis();
@@ -216,7 +202,6 @@ public class Analizador_Lexico {
         }
     }
 
-
     public void Automata_Operador_ComparacionIN() {
         Automata_Operador_Comparacion_IN in = new Automata_Operador_Comparacion_IN();
         lexe = in.inicio(flujo);
@@ -232,16 +217,14 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-    
-      public void Automata_Operador_Logico() {
+
+    public void Automata_Operador_Logico() {
         Automata_Operador_Logico opl = new Automata_Operador_Logico();
         lexe = opl.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-
-   
 
     public void Automata_Condicional_And() {
         Automata_Condicional_And aca = new Automata_Condicional_And();
@@ -913,28 +896,32 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-     public void Automatas_Grant() {
+
+    public void Automatas_Grant() {
         Automatas_Grant driver = new Automatas_Grant();
         lexe = driver.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-     public void Automatas_Group() {
+
+    public void Automatas_Group() {
         Automatas_Group driver = new Automatas_Group();
         lexe = driver.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-       public void Automatas_Join() {
+
+    public void Automatas_Join() {
         Automatas_Join driver = new Automatas_Join();
         lexe = driver.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-        public void Automatas_add() {
+
+    public void Automatas_add() {
         Automatas_add driver = new Automatas_add();
         lexe = driver.inicio(flujo);
         if (lexe != null) {
@@ -942,4 +929,3 @@ public class Analizador_Lexico {
         }
     }
 }
-
