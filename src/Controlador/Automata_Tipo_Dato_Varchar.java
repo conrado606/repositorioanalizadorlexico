@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Caracteres;
+import Modelo.Lexema;
 
 /**
  *
@@ -17,11 +18,17 @@ public class Automata_Tipo_Dato_Varchar {
 
     char[] car;
 
-    public void inicio(Caracteres flujo) {
+    public Lexema inicio(Caracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+           if(aceptada){
+            Analizador_Lexico.flujo.setPosActual(cont);
+            return new Lexema ("varchar","condicional");
+        }else{
+           return null ; 
+        }
     }
 
     public void q0() {
@@ -140,6 +147,10 @@ public class Automata_Tipo_Dato_Varchar {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
+            }
+             else if(car[cont]== ' '){
+                cont++;
+                aceptada=true;
             }
         }
     }

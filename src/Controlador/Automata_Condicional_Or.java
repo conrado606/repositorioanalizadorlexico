@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Caracteres;
+import Modelo.Lexema;
 
 /**
  *
@@ -17,11 +18,17 @@ public class Automata_Condicional_Or {
 
     char[] car;
 
-    public void inicio(Caracteres flujo) {
+    public Lexema inicio(Caracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+         if(aceptada){
+            Analizador_Lexico.flujo.setPosActual(cont);
+            return new Lexema ("or","condicional");
+        }else{
+           return null ; 
+        }
     }
     
     
@@ -55,6 +62,11 @@ public class Automata_Condicional_Or {
                 aceptada = false;
                 cont--;
             }
+              else if(car[cont]== ' '){
+                cont++;
+                aceptada=true;
+            }
+            
         }
     }
 }

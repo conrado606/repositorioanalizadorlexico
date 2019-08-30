@@ -81,6 +81,10 @@ public class Automata_Condicional_And {
                 aceptada = false;
                 cont--;
             }
+             else if(car[cont]== ' '){
+                cont++;
+                aceptada=true;
+            }
         }
     }
 }
