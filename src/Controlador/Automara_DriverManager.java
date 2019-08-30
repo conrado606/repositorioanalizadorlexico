@@ -6,22 +6,31 @@
 package Controlador;
 
 import Modelo.Caracteres;
+import Modelo.Lexema;
 
 /**
  *
  * @author Mauricio
  */
 public class Automara_DriverManager {
-     int cont;
+
+    int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
-    public void inicio(Caracteres flujo) {
+    public Lexema inicio(Caracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+        if (aceptada) {
+            Analizador_Lexico.flujo.setPosActual(cont);
+
+            return new Lexema("drivermanager", "Palabra reservada");
+        } else {
+            return null;
+        }
     }
 
     public void q0() {
@@ -185,7 +194,8 @@ public class Automara_DriverManager {
             }
         }
     }
-         public void q9() {
+
+    public void q9() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -203,7 +213,7 @@ public class Automara_DriverManager {
         }
     }
 
- public void q10() {
+    public void q10() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -219,8 +229,9 @@ public class Automara_DriverManager {
 
             }
         }
- }
-         public void q11() {
+    }
+
+    public void q11() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
@@ -236,8 +247,7 @@ public class Automara_DriverManager {
 
             }
         }
-}
-
+    }
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
@@ -251,6 +261,10 @@ public class Automara_DriverManager {
                 aceptada = false;
                 cont--;
             }
+        } else if (car[cont] == ' ') {
+            cont++;
+            aceptada = true;
+
         }
     }
 }
