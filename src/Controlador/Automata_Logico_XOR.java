@@ -12,8 +12,8 @@ import Modelo.Lexema;
  *
  * @author Acer
  */
-public class Automata_Condicional_And {
-      int cont;
+public class Automata_Logico_XOR {
+     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
@@ -23,9 +23,9 @@ public class Automata_Condicional_And {
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-        if(aceptada){
+          if(aceptada){
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("and","Operador Logico");
+            return new Lexema ("xor","Operador_logico");
         }else{
            return null ; 
         }
@@ -35,7 +35,7 @@ public class Automata_Condicional_And {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'x') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -53,7 +53,7 @@ public class Automata_Condicional_And {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -67,12 +67,12 @@ public class Automata_Condicional_And {
         }
     }
 
-   
+ 
 
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
@@ -80,11 +80,10 @@ public class Automata_Condicional_And {
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            }
-             else if(car[cont]== ' '){
+            } else if (car[cont] == ' ') {
                 cont++;
-                aceptada=true;
+                aceptada = true;
             }
         }
-    }
+    } 
 }

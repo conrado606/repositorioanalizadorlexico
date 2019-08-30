@@ -35,7 +35,8 @@ public class Automata_Delimitadores {
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == ';' || car[cont] == ',' || car[cont] == ' ') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == ';' || car[cont] == ',' 
+                    || car[cont] == '"' || car[cont] == '"' ) {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

@@ -120,6 +120,10 @@ public class Automata_Alter {
                 cont++;
                 aceptada = true;
             }
+            else if (car[cont] == ' ') {
+                cont++;
+                aceptada = true;
+            }
         }
     }
 }
