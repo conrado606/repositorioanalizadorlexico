@@ -6,54 +6,30 @@
 package Controlador;
 
 import Modelo.Caracteres;
-import Modelo.Lexema;
 
 /**
  *
  * @author Acer
  */
-public class Automata_Condicional_And {
-      int cont;
+public class Automata_Operador_Logico1 {
+             int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
-    public Lexema inicio(Caracteres flujo) {
+    public void inicio(Caracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-        if(aceptada){
-            Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("and","condicional");
-        }else{
-           return null ; 
-        }
     }
-
-    public void q0() {
+    
+    
+      public void q0() {
 
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                cont++;/*incrememnto mi contador*/
-
-                q1();
-
-            } else {
-
-                aceptada = false;
-
-            }
-        }
-    }
-
-    public void q1() {
-
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
-
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '<' ||  car[cont] == '>') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 cont++;/*incrememnto mi contador*/
 
@@ -67,12 +43,10 @@ public class Automata_Condicional_And {
         }
     }
 
-   
-
     public void qF() {
         if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == '=') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
