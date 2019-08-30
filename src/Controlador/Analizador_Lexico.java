@@ -80,7 +80,7 @@ public class Analizador_Lexico {
             Automata_Tipo_Dato_Integer();
             Automata_Tipo_Dato_Text();
             Automata_Tipo_Dato_Varchar();
-            //__________________________________________
+            //_____________________palabras reservadas_____________________
             Automata_Into();
             Automata_Condition();
 
@@ -91,6 +91,76 @@ public class Analizador_Lexico {
             Automata_Operador_Logico();
 
             Automata_Logico_XOR();
+
+            Automata_Into();
+            Automata_DriverManager();
+            Automata_Alter();
+            Automata_Analyze();
+            Automata_As();
+            Automata_Before();
+            Automata_Between();
+            Automata_Cascade();
+            Automata_Catch();
+            Automata_Change();
+            Automata_Check();
+            Automata_Class();
+            Automata_Column();
+            Automata_Connect();
+            Automata_Condition();
+            Automata_Connection();
+            Automata_Constraint();
+            Automata_Convert();
+            Automata_Create();
+            Automata_DataBase();
+            Automata_Default();
+            Automata_Delete();
+            Automata_Describe();
+            Automata_Distinct();
+            Automata_Drop();
+            Automata_Exception();
+            Automata_False();
+            Automata_FindIterable();
+            Automata_Foreach();
+            Automata_Foreing();
+            Automata_Forname();
+            Automata_From();
+            Automata_Ignore();
+            Automata_Index();
+            Automata_Inner();
+            Automata_Insert();
+            Automata_Iterable();
+            Automata_Key();
+            Automata_Left();
+            Automata_Lock();
+            Automata_Null();
+            Automata_Password();
+            Automata_Primary();
+            Automata_Procedure();
+            Automata_Public();
+            Automata_Read();
+            Automata_References();
+            Automata_Rename();
+            Automata_Require();
+            Automata_Resultset();
+            Automata_Return();
+            Automata_Right();
+            Automata_Role();
+            Automata_Schema();
+            Automata_Select();
+            Automata_Sql();
+            Automata_System();
+            Automata_Table();
+            Automata_This();
+            Automata_True();
+            Automata_Unique();
+            Automata_Update();
+            Automata_Use();
+            Automata_User();
+            Automata_Values();
+            Automatas_Grant();
+            Automatas_Group();
+            Automatas_Join();
+            Automatas_add();
         }
 
     }
