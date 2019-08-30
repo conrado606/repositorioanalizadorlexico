@@ -6,23 +6,33 @@
 package Controlador;
 
 import Modelo.Caracteres;
+import Modelo.Lexema;
 
 /**
  *
  * @author Mauricio
  */
 public class Auotomata_Into {
- //.......
+    //.......
+
     int cont;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
-    public void inicio(Caracteres flujo) {
+    public Lexema inicio(Caracteres flujo) {
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+        if (aceptada) {
+            Analizador_Lexico.flujo.setPosActual(cont);
+
+            return new Lexema("into", "Palabra reservada");
+        } else {
+            return null;
+        }
+
     }
 
     public void q0() {
@@ -91,6 +101,9 @@ public class Auotomata_Into {
                 aceptada = false;
                 cont--;
             }
+        } else if (car[cont] == ' ') {
+            cont++;
+            aceptada = true;
         }
     }
 }
