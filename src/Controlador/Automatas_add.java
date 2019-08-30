@@ -6,6 +6,7 @@
 package Controlador;
 
 import Modelo.Caracteres;
+import Modelo.Lexema;
 
 /**
  *
@@ -18,11 +19,18 @@ public class Automatas_add {
 
     char[] car;
 
-    public void inicio(Caracteres flujo) {
-        cont = flujo.getPosActual();
+    public Lexema inicio(Caracteres flujo) {
+       cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
+        if (aceptada) {
+            Analizador_Lexico.flujo.setPosActual(cont);
+
+            return new Lexema("add", "Palabra reservada");
+        } else {
+            return null;
+        }
     }
 
     public void q0() {

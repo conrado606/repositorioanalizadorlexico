@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author Acer
+ * @author Mauricio
  */
 public class Analizador_Lexico {
 
@@ -28,15 +28,13 @@ public class Analizador_Lexico {
         this.listLexema = listLexema;
     }
 
-    public void Analizar(Caracteres flu) {
+    public void analizar(Caracteres flu) {
         flujo = flu;
 
         while (flujo.getPosActual() < flujo.getCaracteres().length) {
-            
-            //--------------------------------------
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
-            Automata_Comparacion_Between() ;
+            Automata_Comparacion_Between();
             Automata_Comparacion_NOT();
             Automata_Operador_LIKE();
             //-------------------------------------
@@ -65,13 +63,14 @@ public class Analizador_Lexico {
         }
 
     }
-     public void Automata_Comparacion_NOT() {
+
+    public void Automata_Comparacion_NOT() {
         Automata_Comparacion_NOT not = new Automata_Comparacion_NOT();
         lexe = not.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
-     }
+    }
 
     public void Automata_Condicional_Operador_Logico() {
         Automata_Operador_Logico opl = new Automata_Operador_Logico();
@@ -88,7 +87,8 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-     public void Automata_Operador_ComparacionIN() {
+
+    public void Automata_Operador_ComparacionIN() {
         Automata_Operador_Comparacion_IN in = new Automata_Operador_Comparacion_IN();
         lexe = in.inicio(flujo);
         if (lexe != null) {
@@ -127,15 +127,14 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-    
-       public void Automata_Operador_LIKE() {
+
+    public void Automata_Operador_LIKE() {
         Automata_Comparacion_LIKE like = new Automata_Comparacion_LIKE();
         lexe = like.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
     }
-    
 
     public void Automata_Condicional_Else() {
         Automata_Condicional_Else els = new Automata_Condicional_Else();
@@ -180,9 +179,7 @@ public class Analizador_Lexico {
     public void Automata_Tipo_Dato_Bit() {
         Automata_Tipo_Dato_Bit bit = new Automata_Tipo_Dato_Bit();
         lexe = bit.inicio(flujo);
-        if (lexe != null) {
-            listLexema.add(lexe);
-        }
+
     }
 
     public void Automata_Tipo_Dato_Char() {
@@ -240,6 +237,7 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
+
     public void Automata_Comparacion_Between() {
         Automata_Comparacion_Between between = new Automata_Comparacion_Between();
         lexe = between.inicio(flujo);
@@ -247,6 +245,5 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-    
 
 }
