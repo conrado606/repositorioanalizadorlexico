@@ -33,13 +33,11 @@ public class Analizador_Lexico {
         flujo = flu;
 
         while (flujo.getPosActual() < flujo.getCaracteres().length) {
-<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
             Automata_Comparacion_Between();
             Automata_Comparacion_NOT();
-=======
- 
+
             //_------------DELIMITADORES--------------------
             Automata_Delimitadores();
             Automata_Parentesis();
@@ -50,8 +48,7 @@ public class Analizador_Lexico {
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
             Automata_Comparacion_Between();
-            
->>>>>>> termine
+
             Automata_Operador_LIKE();
             Automata_Comparacion_ISNULL();
             Automata_Comparacion_IS_NOT_NULL();
@@ -83,29 +80,28 @@ public class Analizador_Lexico {
             Automata_Tipo_Dato_Integer();
             Automata_Tipo_Dato_Text();
             Automata_Tipo_Dato_Varchar();
-<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
             //__________________________________________
             Automata_Into();
             Automata_Condition();
+            
+              Automata_Diferente();
+
+    Automata_OP_logico();
+
+    Automata_Operador_Logico();
+
+    Automata_Logico_XOR();
         }
 
     }
-=======
 
-            // ---------OPERADORES LOGICOS --------------------
-            Automata_Diferente();
-            Automata_OP_logico();
-            Automata_Operador_Logico();
-            Automata_Logico_XOR ();
-      
-         
-           
-        
+    // ---------OPERADORES LOGICOS --------------------
+  
 
-            //-----------PALABRAS RESERVADAS ----------------------
-        }
+    //-----------PALABRAS RESERVADAS ----------------------
 
-    }
+
+
     
      public void Automata_Diferente() {
         Automata_Diferente delimitadores = new Automata_Diferente();
@@ -113,10 +109,10 @@ public class Analizador_Lexico {
         if (lexe != null) {
             listLexema.add(lexe);
         }
-    }
+    
      
       
-     
+}
      
 
     public void Automata_Delimitadores() {
@@ -135,7 +131,6 @@ public class Analizador_Lexico {
         }
     }
     
->>>>>>> termine
 
     public void Automata_Comparacion_NOT() {
         Automata_Comparacion_NOT not = new Automata_Comparacion_NOT();
@@ -144,8 +139,7 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
-=======
+
     
     public void Automata_Logico_XOR () {
         Automata_Logico_XOR xor = new Automata_Logico_XOR();
@@ -154,7 +148,6 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
->>>>>>> termine
 
     public void Automata_Comparacion_ISNULL() {
         Automata_Comparacion_ISNULL isnull = new Automata_Comparacion_ISNULL();
@@ -198,8 +191,7 @@ public class Analizador_Lexico {
         }
     }
 
-<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
-=======
+
     public void Automata_Parentesis() {
         Automata_Parentesis p = new Automata_Parentesis();
         lexe = p.inicio(flujo);
@@ -224,7 +216,7 @@ public class Analizador_Lexico {
         }
     }
 
->>>>>>> termine
+
     public void Automata_Operador_ComparacionIN() {
         Automata_Operador_Comparacion_IN in = new Automata_Operador_Comparacion_IN();
         lexe = in.inicio(flujo);
@@ -387,7 +379,6 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-<<<<<<< 39b807b49270b108532bda89ba8fb0305dc8b1a5
 
     public void Automata_Into() {
         Auotomata_Into into = new Auotomata_Into();
@@ -950,7 +941,5 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
-=======
->>>>>>> termine
-
 }
+
