@@ -14,7 +14,7 @@ import Modelo.Lexema;
  */
 public class Automata_Operador_Comparacion {
     int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+    boolean aceptada;
 
     char[] car;
 
@@ -32,10 +32,10 @@ public class Automata_Operador_Comparacion {
     }
 
     public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
             if (car[cont] == '|' || car[cont] == '!' || car[cont] == '&'
-                    ) {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+                    ) {
 
                 aceptada = true;
                 cont++;
