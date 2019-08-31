@@ -14,7 +14,7 @@ import Modelo.Lexema;
  */
 public class Automata_Index {
        int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+    boolean aceptada;
 
     char[] car;
 
@@ -34,9 +34,9 @@ public class Automata_Index {
 
     public void q0() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'i') {
 
                 cont++;/*incrememnto mi contador*/
 
@@ -52,9 +52,9 @@ public class Automata_Index {
 
     public void q1() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'n') {
 
                 cont++;/*incrememnto mi contador*/
 
@@ -70,11 +70,11 @@ public class Automata_Index {
 
     public void q2() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'd') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q3();
 
