@@ -14,7 +14,7 @@ import Modelo.Lexema;
  */
 public class Automata_Read {
      int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+    boolean aceptada;
 
     char[] car;
 
@@ -35,11 +35,11 @@ public class Automata_Read {
 
     public void q0() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'r') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q1();
 
@@ -53,11 +53,11 @@ public class Automata_Read {
 
     public void q1() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'e') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q2();
 
@@ -71,11 +71,11 @@ public class Automata_Read {
 
     public void q2() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'a') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 qF();
 
@@ -88,9 +88,9 @@ public class Automata_Read {
     }
 
     public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'd') {
 
                 aceptada = true;
                 cont++;

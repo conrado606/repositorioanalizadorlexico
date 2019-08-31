@@ -14,7 +14,7 @@ import Modelo.Lexema;
  */
 public class Automata_Sql {
    int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+    boolean aceptada;
 
     char[] car;
 
@@ -34,11 +34,10 @@ public class Automata_Sql {
 
     public void q0() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
+            if (car[cont] == 's') {
 
-            if (car[cont] == 's') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
-
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q1();
 
@@ -52,11 +51,11 @@ public class Automata_Sql {
 
     public void q1() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'q') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'q') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 qF();
 
@@ -71,9 +70,9 @@ public class Automata_Sql {
   
 
     public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'l') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'l') {
 
                 aceptada = true;
                 cont++;
