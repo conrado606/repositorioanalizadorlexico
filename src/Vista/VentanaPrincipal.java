@@ -7,6 +7,11 @@ package Vista;
 
 import Controlador.Analizador_Lexico;
 import Modelo.Caracteres;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -17,6 +22,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
+    
+    String texto = "";
     public VentanaPrincipal() {
         initComponents();
     }
@@ -34,6 +41,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         txtTexto = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTexto = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,19 +67,34 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jButton1.setText("Archivo");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jTexto.setColumns(20);
+        jTexto.setRows(5);
+        jScrollPane1.setViewportView(jTexto);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(txtTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAnalizar)
-                .addGap(75, 75, 75))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(btnAnalizar))
+                .addGap(73, 73, 73))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -79,9 +104,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAnalizar))
-                .addGap(53, 53, 53)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         pack();
@@ -89,25 +118,70 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
-        String cadena = txtTexto.getText();
-        char[]caracteres;
-        caracteres = cadena.toCharArray();
-        
-        Caracteres ca = new Caracteres(0, caracteres);
-        Analizador_Lexico al = new Analizador_Lexico();
-        al.analizar(ca);
-        
-        for (int i = 0; i < al.getListLexema().size(); i++) {
-            System.err.println(" Token" + " - " + al.getListLexema().get(i).getToken()
-                    + "\n Tipo" + " - " + al.getListLexema().get(i).getTipoLexema());
-        }
+         char[] caracteres;
+        caracteres = texto.toCharArray();
+        Caracteres fc = new Caracteres(0, caracteres);
+
+        Analizador_Lexico analexi = new Analizador_Lexico();
+
+        analexi.analizar(fc);
+
+        listar();
     }//GEN-LAST:event_btnAnalizarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Scanner entrada = null;
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.showOpenDialog(fileChooser);
+        try {
+            String ruta = fileChooser.getSelectedFile().getAbsolutePath();
+            File f = new File(ruta);
+            entrada = new Scanner(f);
+            while (entrada.hasNext()) {
+                texto = texto + entrada.nextLine();
+                jTexto.setText(texto);
+                jTexto.setLineWrap(true);
+
+            }
+            System.out.println(texto);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("No se ha seleccionado ningún fichero");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (entrada != null) {
+                entrada.close();
+            }
+        }
+
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+ public void listar() {
+
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Token");
+        modelo.addColumn("Tipo Lexema");
+        for (int i = 0; i < Analizador_Lexico.listLexema.size(); i++) {
+            modelo.addRow(new Object[]{
+                Analizador_Lexico.listLexema.get(i).getToken(),
+                Analizador_Lexico.listLexema.get(i).getTipoLexema()
+            });
+        }
+
+        jTable2.setModel(modelo);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTextArea jTexto;
     private javax.swing.JTextField txtTexto;
     // End of variables declaration//GEN-END:variables
 }
