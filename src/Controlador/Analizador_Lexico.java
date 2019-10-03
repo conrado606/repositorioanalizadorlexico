@@ -17,9 +17,10 @@ import java.util.List;
  */
 public class Analizador_Lexico {
 
-    List<Lexema> listLexema = new ArrayList<>();
+    public static List<Lexema> listLexema = new ArrayList<>();
     Lexema lexe;
-    public static Caracteres flujo;
+   public static Caracteres flujo;
+   
 
     public List<Lexema> getListLexema() {
         return listLexema;
