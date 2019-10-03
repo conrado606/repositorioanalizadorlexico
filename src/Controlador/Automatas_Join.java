@@ -14,6 +14,7 @@ import Modelo.Lexema;
  */
 public class Automatas_Join {
      int cont;
+     int cont2;
     boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
