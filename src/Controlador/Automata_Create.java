@@ -14,7 +14,8 @@ import Modelo.Lexema;
  */
 public class Automata_Create {
      int cont;
-    boolean aceptada;
+    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+
     char[] car;
 
     public Lexema inicio(Caracteres flujo) {
@@ -33,11 +34,11 @@ public class Automata_Create {
 
     public void q0() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'c') {
+            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q1();
 
@@ -50,11 +51,11 @@ public class Automata_Create {
     }
             public void q1() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q2();
 
@@ -67,11 +68,11 @@ public class Automata_Create {
             }
             public void q2() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q3();
 
@@ -84,11 +85,11 @@ public class Automata_Create {
             }
             public void q3() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q4();
 
@@ -101,11 +102,11 @@ public class Automata_Create {
             }
             public void q4() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {
+            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -118,9 +119,9 @@ public class Automata_Create {
 
             }
     public void qF() {
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

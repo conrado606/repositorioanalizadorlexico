@@ -13,9 +13,8 @@ import Modelo.Lexema;
  * @author Mauricio
  */
 public class Automata_Forname {
-
-    int cont;
-    boolean aceptada;
+      int cont;
+    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
@@ -35,11 +34,11 @@ public class Automata_Forname {
 
     public void q0() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'f') {
+            if (car[cont] == 'f') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q1();
 
@@ -50,14 +49,13 @@ public class Automata_Forname {
             }
         }
     }
+            public void q1() {
 
-    public void q1() {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-        if (cont < car.length) {
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-            if (car[cont] == 'o') {
-
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q2();
 
@@ -67,15 +65,14 @@ public class Automata_Forname {
 
             }
         }
-    }
+            }
+            public void q2() {
 
-    public void q2() {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-        if (cont < car.length) {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-            if (car[cont] == 'r') {
-
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q3();
 
@@ -85,15 +82,14 @@ public class Automata_Forname {
 
             }
         }
-    }
+            }
+            public void q3() {
 
-    public void q3() {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-        if (cont < car.length) {
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-            if (car[cont] == 'n') {
-
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q4();
 
@@ -103,15 +99,14 @@ public class Automata_Forname {
 
             }
         }
-    }
+            }
+            public void q4() {
 
-    public void q4() {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-        if (cont < car.length) {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-            if (car[cont] == 'a') {
-
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q5();
 
@@ -126,11 +121,11 @@ public class Automata_Forname {
 
     public void q5() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'm') {
+            if (car[cont] == 'm') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -143,16 +138,17 @@ public class Automata_Forname {
     }
 
     public void qF() {
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
                 aceptada = true;
                 cont++;
                 qF();
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
                 aceptada = false;
                 cont--;
-            } else if (car[cont] == ' ') {
+            }else if (car[cont] == ' ') {
                 cont++;
                 aceptada = true;
             }
