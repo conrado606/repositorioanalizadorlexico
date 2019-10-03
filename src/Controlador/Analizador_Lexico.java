@@ -19,8 +19,7 @@ public class Analizador_Lexico {
 
     public static List<Lexema> listLexema = new ArrayList<>();
     Lexema lexe;
-   public static Caracteres flujo;
-   
+    public static Caracteres flujo;
 
     public List<Lexema> getListLexema() {
         return listLexema;
@@ -34,6 +33,14 @@ public class Analizador_Lexico {
         flujo = flu;
 
         while (flujo.getPosActual() < flujo.getCaracteres().length) {
+
+            AutomataParentesisAbierto();
+            AutomataParentesisCerrado();
+            AutomataCorcheteAbierto();
+            AutomataCorcheteCerrado();
+            AutomataLlaveAbierta();
+            AutomataLlaveCerrado();
+
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
             Automata_Comparacion_Between();
@@ -98,6 +105,54 @@ public class Analizador_Lexico {
 
     // ---------OPERADORES LOGICOS --------------------
     //-----------PALABRAS RESERVADAS ----------------------
+    public void AutomataParentesisAbierto() {
+        Automata_parentesis_abierto apa = new Automata_parentesis_abierto();
+        lexe = apa.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void AutomataParentesisCerrado() {
+        Automata_parentesis_cerrado apc = new Automata_parentesis_cerrado();
+        lexe = apc.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void AutomataCorcheteAbierto() {
+        Automata_corchete_abierto aca = new Automata_corchete_abierto();
+        lexe = aca.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void AutomataCorcheteCerrado() {
+        Automata_corchete_cerrado acc = new Automata_corchete_cerrado();
+        lexe = acc.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void AutomataLlaveAbierta() {
+        Automata_llave_abierta ala = new Automata_llave_abierta();
+        lexe = ala.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void AutomataLlaveCerrado() {
+        Automata_llave_cerrado alc = new Automata_llave_cerrado();
+        lexe = alc.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
     public void Automata_Diferente() {
         Automata_Diferente delimitadores = new Automata_Diferente();
         lexe = delimitadores.inicio(flujo);
