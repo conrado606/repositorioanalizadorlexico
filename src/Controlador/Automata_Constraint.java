@@ -15,7 +15,7 @@ import Modelo.Lexema;
 public class Automata_Constraint {
 
     int cont;
-    boolean aceptada;
+    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
@@ -35,11 +35,11 @@ public class Automata_Constraint {
 
     public void q0() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'c') {
+            if (car[cont] == 'c') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q1();
 
@@ -53,11 +53,11 @@ public class Automata_Constraint {
 
     public void q1() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'o') {
+            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q2();
 
@@ -71,11 +71,11 @@ public class Automata_Constraint {
 
     public void q2() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q3();
 
@@ -89,11 +89,11 @@ public class Automata_Constraint {
 
     public void q3() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 's') {
+            if (car[cont] == 's') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q4();
 
@@ -107,11 +107,11 @@ public class Automata_Constraint {
 
     public void q4() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {
+            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q5();
 
@@ -125,11 +125,11 @@ public class Automata_Constraint {
 
     public void q5() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q6();
 
@@ -143,11 +143,11 @@ public class Automata_Constraint {
 
     public void q6() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q7();
 
@@ -161,11 +161,11 @@ public class Automata_Constraint {
 
     public void q7() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q8();
 
@@ -179,11 +179,11 @@ public class Automata_Constraint {
 
     public void q8() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -196,9 +196,9 @@ public class Automata_Constraint {
     }
 
     public void qF() {
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {
+            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

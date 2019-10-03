@@ -14,7 +14,7 @@ import Modelo.Lexema;
  */
 public class Automata_FindIterable {
      int cont;
-    boolean aceptada;
+    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
@@ -34,11 +34,11 @@ public class Automata_FindIterable {
 
     public void q0() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'f') {
+            if (car[cont] == 'f') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q1();
 
@@ -52,11 +52,12 @@ public class Automata_FindIterable {
 
     public void q1() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
+
                 q2();
 
             } else {
@@ -69,11 +70,11 @@ public class Automata_FindIterable {
 
     public void q2() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q3();
 
@@ -87,11 +88,11 @@ public class Automata_FindIterable {
 
     public void q3() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'd') {
+            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q4();
 
@@ -105,11 +106,11 @@ public class Automata_FindIterable {
 
     public void q4() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q5();
 
@@ -123,11 +124,11 @@ public class Automata_FindIterable {
 
     public void q5() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 't') {
+            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q6();
 
@@ -141,11 +142,11 @@ public class Automata_FindIterable {
 
     public void q6() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q7();
 
@@ -159,11 +160,11 @@ public class Automata_FindIterable {
 
     public void q7() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q8();
 
@@ -177,11 +178,11 @@ public class Automata_FindIterable {
 
     public void q8() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -194,11 +195,11 @@ public class Automata_FindIterable {
     }
   public void q9() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'b') {
+            if (car[cont] == 'b') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q10();
 
@@ -211,11 +212,11 @@ public class Automata_FindIterable {
   }
           public void q10() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'l') {
+            if (car[cont] == 'l') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -228,9 +229,9 @@ public class Automata_FindIterable {
 }
 
     public void qF() {
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;

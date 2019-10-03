@@ -15,7 +15,7 @@ import Modelo.Lexema;
 public class Automara_DriverManager {
 
     int cont;
-    boolean aceptada;
+    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
 
     char[] car;
 
@@ -35,11 +35,11 @@ public class Automara_DriverManager {
 
     public void q0() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'd') {
+            if (car[cont] == 'd') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q1();
 
@@ -53,11 +53,11 @@ public class Automara_DriverManager {
 
     public void q1() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q2();
 
@@ -71,11 +71,11 @@ public class Automara_DriverManager {
 
     public void q2() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'i') {
+            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q3();
 
@@ -89,11 +89,11 @@ public class Automara_DriverManager {
 
     public void q3() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'v') {
+            if (car[cont] == 'v') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q4();
 
@@ -107,10 +107,11 @@ public class Automara_DriverManager {
 
     public void q4() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
-                cont++;
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
+                cont++;/*incrememnto mi contador*/
 
                 q5();
 
@@ -124,11 +125,11 @@ public class Automara_DriverManager {
 
     public void q5() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q6();
 
@@ -142,11 +143,11 @@ public class Automara_DriverManager {
 
     public void q6() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'm') {
+            if (car[cont] == 'm') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q7();
 
@@ -160,11 +161,11 @@ public class Automara_DriverManager {
 
     public void q7() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q8();
 
@@ -178,11 +179,11 @@ public class Automara_DriverManager {
 
     public void q8() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'n') {
+            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q9();
 
@@ -196,11 +197,11 @@ public class Automara_DriverManager {
 
     public void q9() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'a') {
+            if (car[cont] == 'a') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 q10();
 
@@ -214,10 +215,11 @@ public class Automara_DriverManager {
 
     public void q10() {
 
-        if (cont < car.length) {
-            if (car[cont] == 'g') {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-                cont++;
+            if (car[cont] == 'g') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+
+                cont++;/*incrememnto mi contador*/
 
                 q11();
 
@@ -231,11 +233,11 @@ public class Automara_DriverManager {
 
     public void q11() {
 
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'e') {
+            if (car[cont] == 'e') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
-                cont++;
+                cont++;/*incrememnto mi contador*/
 
                 qF();
 
@@ -248,9 +250,9 @@ public class Automara_DriverManager {
     }
 
     public void qF() {
-        if (cont < car.length) {
+        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'r') {
+            if (car[cont] == 'r') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
 
                 aceptada = true;
                 cont++;
