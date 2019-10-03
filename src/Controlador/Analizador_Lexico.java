@@ -20,14 +20,27 @@ public class Analizador_Lexico {
     public static List<Lexema> listLexema = new ArrayList<>();
     Lexema lexe;
     public static Caracteres flujo;
+  public static List<Lexema> listLexema = new ArrayList<>();
 
-    public List<Lexema> getListLexema() {
+    public static List<Lexema> getListLexema() {
         return listLexema;
     }
 
-    public void setListLexema(List<Lexema> listLexema) {
-        this.listLexema = listLexema;
+    public static void setListLexema(List<Lexema> listLexema) {
+        Analizador_Lexico.listLexema = listLexema;
     }
+
+    public static List<Lexema> getListaErrores() {
+        return listaErrores;
+    }
+
+    public static void setListaErrores(List<Lexema> listaErrores) {
+        Analizador_Lexico.listaErrores = listaErrores;
+    }
+    public static List<Lexema> listaErrores = new ArrayList<>();
+    Lexema lexe;
+    public static Caracteres flujo = new Caracteres(0, null);
+    int posInicial = 0;
 
     public void analizar(Caracteres flu) {
         flujo = flu;
