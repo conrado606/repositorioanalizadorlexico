@@ -113,8 +113,82 @@ public class Analizador_Lexico {
             Automata_Operador_Logico();
 
             Automata_Logico_XOR();
+            //--------OTROS------------------------
+            identificadores();
+            errores();
         }
 
+    }
+
+    public void identificadores() {
+        String identificador = "";
+        if (flujo.getPosActual() == posInicial) {
+            for (int i = flujo.getPosActual(); i < flujo.getCaracteres().length; i++) {
+                if (Character.isLetter(flujo.getCaracteres()[i]) || Character.isDigit(flujo.getCaracteres()[i])) {
+                    identificador = identificador + flujo.getCaracteres()[i];
+                    if (i == flujo.getCaracteres().length - 1) {
+                        i = validarEspacios(i);
+                        flujo.setPosActual(i + 1);
+                        Lexema lex = new Lexema(identificador, "Identificador");
+                        listLexema.add(lex);
+                        break;
+                    }
+                } else {
+                    i = validarEspacios(i);
+                    flujo.setPosActual(i);
+                    if (identificador == "") {
+
+                    } else {
+                        Lexema lex = new Lexema(identificador, "Identificador");
+                        listLexema.add(lex);
+                    }
+                    break;
+
+                }
+            }
+        }
+    }
+
+    public int validarEspacios(int pos) {
+        if (flujo.getCaracteres()[pos] == ' ') {
+            pos++;
+            validarEspacios(pos);
+        }
+        return pos;
+    }
+
+    public void errores() {
+        String error = "";
+        if (flujo.getPosActual() == posInicial) {
+            for (int i = flujo.getPosActual(); i < flujo.getCaracteres().length; i++) {
+                if (flujo.getCaracteres()[i] == '_' || flujo.getCaracteres()[i] == '-'
+                        || flujo.getCaracteres()[i] == '?' || flujo.getCaracteres()[i] == '$'
+                        || flujo.getCaracteres()[i] == '¡' || flujo.getCaracteres()[i] == '¿'
+                        || flujo.getCaracteres()[i] == ':' || flujo.getCaracteres()[i] == '°'
+                        || flujo.getCaracteres()[i] == '^'
+                        || flujo.getCaracteres()[i] == '"' || flujo.getCaracteres()[i] == '~'
+                        || flujo.getCaracteres()[i] == '¬' || flujo.getCaracteres()[i] == '¨') {
+                    error = error + flujo.getCaracteres()[i];
+                    if (i == flujo.getCaracteres().length - 1) {
+                        i = validarEspacios(i);
+                        flujo.setPosActual(i + 1);
+                        Lexema lex = new Lexema(error, "Error");
+                        listaErrores.add(lex);
+                        break;
+                    }
+                } else {
+                    i = validarEspacios(i);
+                    flujo.setPosActual(i);
+                    if (error == "") {
+
+                    } else {
+                        Lexema lex = new Lexema(error, "Error");
+                        listaErrores.add(lex);
+                    }
+                    break;
+                }
+            }
+        }
     }
 
     // ---------OPERADORES LOGICOS --------------------
