@@ -25,7 +25,7 @@ import javax.swing.tree.TreePath;
  */
 public class GramaticaClase implements Gramatica {
 
-    @Override
+      @Override
     public Clase analizar(Sentencia raiz, FlujoTokens flujoTokens) {
 
         Clase clase = new Clase();
