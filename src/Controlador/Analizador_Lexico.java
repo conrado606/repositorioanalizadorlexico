@@ -16,11 +16,11 @@ import java.util.List;
  * @author Mauricio
  */
 public class Analizador_Lexico {
-    
+
     int a;
     int b;
 
-  public static List<Lexema> listLexema = new ArrayList<>();
+    public static List<Lexema> listLexema = new ArrayList<>();
 
     public static List<Lexema> getListLexema() {
         return listLexema;
@@ -46,6 +46,18 @@ public class Analizador_Lexico {
         flujo = flu;
 
         while (flujo.getPosActual() < flujo.getCaracteres().length) {
+
+            //------PARENTESIS CORCHETES Y LLAVES -------------
+            Automata_Corchete_Abierto();
+            Automata_Corchete_Cerrado();
+            Automata_Llave_Abierta();
+            Automata_Llave_Cerrado();
+            Automata_Parentesis_Abierto();
+            Automata_Parentesis_Cerrado();
+
+            //------------------ CLASE-------------------------
+            Automata_Class();
+            //-----------------OTROS-----------------------------
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
             Automata_Comparacion_Between();
@@ -53,9 +65,6 @@ public class Analizador_Lexico {
 
             //_------------DELIMITADORES--------------------
             Automata_Delimitadores();
-            Automata_Parentesis();
-            Automata_Llave();
-            Automata_Corchete();
 
             //--------------COMPARACION--------------
             Automata_Operador_Comparacion();
@@ -110,6 +119,68 @@ public class Analizador_Lexico {
 
     // ---------OPERADORES LOGICOS --------------------
     //-----------PALABRAS RESERVADAS ----------------------
+    public void Automata_Class() {
+        Automata_Class classs = new Automata_Class();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Parentesis_Abierto() {
+        Automata_parentesis_abierto apa = new Automata_parentesis_abierto();
+        lexe = apa.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Parentesis_Cerrado() {
+        Automata_parentesis_cerrado apc = new Automata_parentesis_cerrado();
+        lexe = apc.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Llave_Abierta() {
+        Automata_llave_abierta ala = new Automata_llave_abierta();
+        lexe = ala.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Llave_Cerrado() {
+        Automata_llave_cerrado aca = new Automata_llave_cerrado();
+        lexe = aca.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Corchete_Abierto() {
+        Automata_corchete_abierto aca = new Automata_corchete_abierto();
+        lexe = aca.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
+    public void Automata_Corchete_Cerrado() {
+        Automata_corchete_cerrado acc = new Automata_corchete_cerrado();
+        lexe = acc.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+
+    }
+
     public void Automata_Diferente() {
         Automata_Diferente delimitadores = new Automata_Diferente();
         lexe = delimitadores.inicio(flujo);
@@ -186,30 +257,6 @@ public class Analizador_Lexico {
     public void Automata_Operador_Comparacion() {
         Automata_Operador_Comparacion comparacion = new Automata_Operador_Comparacion();
         lexe = comparacion.inicio(flujo);
-        if (lexe != null) {
-            listLexema.add(lexe);
-        }
-    }
-
-    public void Automata_Parentesis() {
-        Automata_Parentesis p = new Automata_Parentesis();
-        lexe = p.inicio(flujo);
-        if (lexe != null) {
-            listLexema.add(lexe);
-        }
-    }
-
-    public void Automata_Llave() {
-        Automata_Llave llave = new Automata_Llave();
-        lexe = llave.inicio(flujo);
-        if (lexe != null) {
-            listLexema.add(lexe);
-        }
-    }
-
-    public void Automata_Corchete() {
-        Automata_Corchete corchete = new Automata_Corchete();
-        lexe = corchete.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
@@ -458,15 +505,6 @@ public class Analizador_Lexico {
 
     public void Automata_Check() {
         Automata_Check driver = new Automata_Check();
-        lexe = driver.inicio(flujo);
-        if (lexe != null) {
-            listLexema.add(lexe);
-        }
-
-    }
-
-    public void Automata_Class() {
-        Automata_Class driver = new Automata_Class();
         lexe = driver.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);

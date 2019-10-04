@@ -25,6 +25,7 @@ import java.util.List;
  */
 public class AnalizadorSintactico {
 
+   
     /**
      * Analizador Lexico
      */
@@ -34,8 +35,7 @@ public class AnalizadorSintactico {
      * Raiz del arbol de derivacion
      */
     private Sentencia unidadCompilacion;
-    private char[] caracteres; 
-    VentanaPrincipal FrmAnalizar;
+    private char[] caracteres;
 
     /**
      * Constrctor
@@ -54,18 +54,19 @@ public class AnalizadorSintactico {
 
         Caracteres fc = new Caracteres(0, caracteres);
         analizadorLexico.analizar(fc);
-//        List<Lexema> tokens = analizadorLexico.getClass()
-//        List<Lexema> errores = analizadorLexico.g
+        List<Lexema> tokens = analizadorLexico.getListLexema();
+        List<Lexema> errores = analizadorLexico.getListaErrores();
 
-        FrmAnalizar.listar();
-////        FrmAnalizar.listarErrores();
-//        if (errores.isEmpty()) {
-//            FlujoTokens flujo = new FlujoTokens(tokens);
-//            GramaticaClase gramm = new GramaticaClase();
-//
-//            unidadCompilacion = gramm.analizar(null, flujo);
-//
-//        }
+        VentanaPrincipal.listar();
+//        VentanaPrincipal.listarErrores();
+        //si no hay errores, se continua con el analisis semantico.
+        if (errores.isEmpty()) {
+            FlujoTokens flujo = new FlujoTokens(tokens);
+            GramaticaClase gramm = new GramaticaClase();
+
+            unidadCompilacion = gramm.analizar(null, flujo);
+
+        }
     }
 
     public Analizador_Lexico getAnalizadorLexico() {
@@ -76,4 +77,5 @@ public class AnalizadorSintactico {
         return unidadCompilacion;
     }
 
+    
 }

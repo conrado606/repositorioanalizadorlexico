@@ -19,7 +19,7 @@ import javax.swing.tree.TreePath;
  */
 public class Clase extends Sentencia {
 
-    /**
+       /**
      * Lista de metodos de la clase....
      */
     private Lista<Metodo> listaMetodos;

@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
+import sintatico.main.AnalizadorSintactico;
 
 /**
  *
@@ -115,20 +116,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
-        // TODO add your handling code here:
-        Analizador_Lexico.listLexema.removeAll(Analizador_Lexico.listLexema);
-        char[] caracteres;
+         // TODO add your handling code here:
+          Analizador_Lexico.listLexema.removeAll(Analizador_Lexico.listLexema);
         if (jTextoAnalizar.getText().equals("")) {
 
         } else {
             texto = jTextoAnalizar.getText();
         }
-        caracteres = texto.toCharArray();
-        Caracteres carac = new Caracteres(0, caracteres);
+        AnalizadorSintactico analexico = new AnalizadorSintactico();
 
-        Analizador_Lexico analexi = new Analizador_Lexico();
-
-        analexi.analizar(carac);
+        analexico.analizar(texto);
 
         listar();
     }//GEN-LAST:event_btnAnalizarActionPerformed
@@ -164,7 +161,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
-    public void listar() {
+      public static void listar() {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Token");
@@ -178,13 +175,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jTable2.setModel(modelo);
     }
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable2;
+    public static javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextoAnalizar;
     // End of variables declaration//GEN-END:variables
 }
