@@ -16,6 +16,9 @@ import java.util.List;
  * @author Mauricio
  */
 public class Analizador_Lexico {
+    
+    int a;
+    int b;
 
   public static List<Lexema> listLexema = new ArrayList<>();
 

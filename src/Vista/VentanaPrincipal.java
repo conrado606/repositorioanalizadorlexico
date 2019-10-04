@@ -1,4 +1,4 @@
-﻿/*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,7 +12,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
-import sintatico.main.AnalizadorSintactico;
 
 /**
  *
@@ -23,8 +22,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    
     String texto = "";
+
     public VentanaPrincipal() {
         initComponents();
     }
@@ -39,15 +38,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         btnAnalizar = new javax.swing.JButton();
-        txtTexto = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTexto = new javax.swing.JTextArea();
-        jButton2 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jTextoAnalizar = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,56 +73,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jTexto.setColumns(20);
-        jTexto.setRows(5);
-        jScrollPane1.setViewportView(jTexto);
-
-        jButton2.setText("Ver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Token", "Tipo"
-            }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        jTextoAnalizar.setColumns(20);
+        jTextoAnalizar.setRows(5);
+        jScrollPane3.setViewportView(jTextoAnalizar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(txtTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnAnalizar)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(169, 169, 169)
-                        .addComponent(jButton2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(142, 142, 142)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(btnAnalizar)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,20 +99,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAnalizar)
-                            .addComponent(jButton1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(233, 233, 233)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAnalizar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(58, 58, 58))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         pack();
@@ -156,13 +116,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void btnAnalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalizarActionPerformed
         // TODO add your handling code here:
-         char[] caracteres;
+        Analizador_Lexico.listLexema.removeAll(Analizador_Lexico.listLexema);
+        char[] caracteres;
+        if (jTextoAnalizar.getText().equals("")) {
+
+        } else {
+            texto = jTextoAnalizar.getText();
+        }
         caracteres = texto.toCharArray();
-        Caracteres fc = new Caracteres(0, caracteres);
+        Caracteres carac = new Caracteres(0, caracteres);
 
         Analizador_Lexico analexi = new Analizador_Lexico();
 
-        analexi.analizar(fc);
+        analexi.analizar(carac);
 
         listar();
     }//GEN-LAST:event_btnAnalizarActionPerformed
@@ -179,8 +145,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             entrada = new Scanner(f);
             while (entrada.hasNext()) {
                 texto = texto + entrada.nextLine();
-                jTexto.setText(texto);
-                jTexto.setLineWrap(true);
+                jTextoAnalizar.setText(texto);
+                jTextoAnalizar.setLineWrap(true);
 
             }
             System.out.println(texto);
@@ -198,24 +164,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-  Analizador_Lexico.listLexema.removeAll(Analizador_Lexico.listLexema);
-        if (jTexto.getText().equals("")) {
-
-        } else {
-            texto = jTexto.getText();
-        }
-        AnalizadorSintactico analexico= new AnalizadorSintactico();
-        analexico.analizar(texto);
-        listar();
-
-
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
- public void listar() {
+    public void listar() {
 
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Token");
@@ -233,13 +182,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnalizar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTextArea jTexto;
-    private javax.swing.JTextField txtTexto;
+    private javax.swing.JTextArea jTextoAnalizar;
     // End of variables declaration//GEN-END:variables
 }
