@@ -61,6 +61,20 @@ public class Analizador_Lexico {
 
             //------------------ CLASE-------------------------
             Automata_Class();
+            
+           Automata_Alter();
+           Automata_DriverManager();
+           Automata_Create();
+           Automata_DataBase();
+           Automata_Analyze();
+           Automata_Before();
+           Automata_Between();
+           Automata_Cascade();
+           Automata_Select();
+           Automata_Table();
+           Automata_Update();
+           Automata_User();
+           
             //-----------------OTROS-----------------------------
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
