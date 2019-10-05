@@ -49,6 +49,7 @@ public class Analizador_Lexico {
         flujo = flu;
 
         while (flujo.getPosActual() < flujo.getCaracteres().length) {
+            posInicial = flujo.getPosActual();
 
             //------PARENTESIS CORCHETES Y LLAVES -------------
             Automata_Corchete_Abierto();
@@ -154,7 +155,7 @@ public class Analizador_Lexico {
     }
 
     public int validarEspacios(int pos) {
-        if (flujo.getCaracteres()[pos] == ' ') {
+        if (flujo.getCaracteres()[pos] == ' ' || flujo.getCaracteres()[pos] == '\n') {
             pos++;
             validarEspacios(pos);
         }
