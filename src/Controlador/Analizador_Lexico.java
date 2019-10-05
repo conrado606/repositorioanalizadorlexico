@@ -21,24 +21,27 @@ public class Analizador_Lexico {
     int b;
 
     public static List<Lexema> listLexema = new ArrayList<>();
+    public static List<Lexema> listaErrores = new ArrayList<>();
+    Lexema lexe;
 
-    public static List<Lexema> getListLexema() {
+    public List<Lexema> getListaLexema() {
         return listLexema;
     }
 
-    public static void setListLexema(List<Lexema> listLexema) {
-        Analizador_Lexico.listLexema = listLexema;
+    
+    public void setListaLexema(List<Lexema> listaLexema) {
+        this.listLexema = listaLexema;
     }
 
-    public static List<Lexema> getListaErrores() {
+    public List<Lexema> getListaErrores() {
         return listaErrores;
     }
 
-    public static void setListaErrores(List<Lexema> listaErrores) {
+    public void setListaErrores(List<Lexema> listaErrores) {
         Analizador_Lexico.listaErrores = listaErrores;
     }
-    public static List<Lexema> listaErrores = new ArrayList<>();
-    Lexema lexe;
+    
+    
     public static Caracteres flujo = new Caracteres(0, null);
     int posInicial = 0;
 
@@ -116,6 +119,7 @@ public class Analizador_Lexico {
             //--------OTROS------------------------
             identificadores();
             errores();
+            
         }
 
     }
@@ -1053,4 +1057,5 @@ public class Analizador_Lexico {
             listLexema.add(lexe);
         }
     }
+
 }

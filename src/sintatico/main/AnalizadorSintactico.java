@@ -26,7 +26,7 @@ import java.util.List;
 public class AnalizadorSintactico {
 
    
-    /**
+   /**
      * Analizador Lexico
      */
     private final Analizador_Lexico analizadorLexico;
@@ -54,11 +54,11 @@ public class AnalizadorSintactico {
 
         Caracteres fc = new Caracteres(0, caracteres);
         analizadorLexico.analizar(fc);
-        List<Lexema> tokens = analizadorLexico.getListLexema();
+        List<Lexema> tokens = analizadorLexico.getListaLexema();
         List<Lexema> errores = analizadorLexico.getListaErrores();
 
         VentanaPrincipal.listar();
-//        VentanaPrincipal.listarErrores();
+        VentanaPrincipal.listarErrores();
         //si no hay errores, se continua con el analisis semantico.
         if (errores.isEmpty()) {
             FlujoTokens flujo = new FlujoTokens(tokens);
@@ -76,6 +76,5 @@ public class AnalizadorSintactico {
     public Sentencia getUnidadCompilacion() {
         return unidadCompilacion;
     }
-
     
 }
