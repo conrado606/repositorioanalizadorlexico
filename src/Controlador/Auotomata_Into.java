@@ -16,36 +16,40 @@ public class Auotomata_Into {
     //.......
 
     int cont;
-    boolean aceptada;/*para guardar los caratcteres y los va ir separando*/
+    int posInicial;
+
+    boolean aceptada;
 
     char[] car;
 
     public Lexema inicio(Caracteres flujo) {
+        posInicial = flujo.getPosActual();
         cont = flujo.getPosActual();
         car = flujo.getCaracteres();
         aceptada = false;
         q0();
-         if(aceptada){
+        if (aceptada) {
             Analizador_Lexico.flujo.setPosActual(cont);
-            return new Lexema ("into","palabra reservada");
-        }else{
-           return null ; 
-        }
 
+            return new Lexema("into", "Palabra reservada");
+        } else {
+            return null;
+        }
     }
 
     public void q0() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'i') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'i') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q1();
 
             } else {
 
+                Analizador_Lexico.flujo.setPosActual(posInicial);
                 aceptada = false;
 
             }
@@ -54,55 +58,66 @@ public class Auotomata_Into {
 
     public void q1() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 'n') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 'n') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 q2();
 
             } else {
 
+                Analizador_Lexico.flujo.setPosActual(posInicial);
                 aceptada = false;
-
             }
         }
     }
 
     public void q2() {
 
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
+        if (cont < car.length) {
 
-            if (car[cont] == 't') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+            if (car[cont] == 't') {
 
-                cont++;/*incrememnto mi contador*/
+                cont++;
 
                 qF();
 
             } else {
-
+                Analizador_Lexico.flujo.setPosActual(posInicial);
                 aceptada = false;
 
             }
         }
     }
 
-    public void qF() {
-        if (cont < car.length) {/*cuantos espacios tiene mi arreglo*/
 
-            if (car[cont] == 'o') {/*el arreglo car en el contador 0 lo vamos a comparar si es = a*/
+    public void qF() {
+        if (cont < car.length) {
+
+            if (car[cont] == 'o' && aceptada == false) {
 
                 aceptada = true;
                 cont++;
                 qF();
+
             } else if (Character.isLetter(car[cont]) || Character.isDigit(car[cont])) {
+                Analizador_Lexico.flujo.setPosActual(posInicial);
+
                 aceptada = false;
                 cont--;
-        } else if (car[cont] == ' ') {
-            cont++;
-            aceptada = true;
+
+            } else if (car[cont] == ' ' || car[cont] == '\n') {
+                validarEspacios();
+            }
         }
     }
+
+    public void validarEspacios() {
+        if (car[cont] == ' ' || car[cont] == '\n') {
+            cont++;
+            validarEspacios();
+        }
     }
 }
