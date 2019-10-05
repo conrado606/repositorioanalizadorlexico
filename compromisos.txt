@@ -1,0 +1,3 @@
+1. crea GUI funcional
+2. analizar un texto completo, no solo palabras simples
+3. hacer las pruebas unitarias.
