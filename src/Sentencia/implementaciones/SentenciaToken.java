@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class SentenciaToken extends Sentencia {
 
-    private Lexema simbolo;
+      private Lexema simbolo;
 
     public SentenciaToken() {
     }
