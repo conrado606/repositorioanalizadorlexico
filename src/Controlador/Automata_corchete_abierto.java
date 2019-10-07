@@ -10,7 +10,7 @@ import Modelo.Lexema;
 
 /**
  *
- * @author alvar
+ * @author Acer
  */
 public class Automata_corchete_abierto {
 

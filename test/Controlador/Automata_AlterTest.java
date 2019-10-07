@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
  *
  * @author Acer
  */
-public class Automata_Comparacion_ALLTest {
+public class Automata_AlterTest {
     
-    @Test
-    public void Automata_Comparacion_ALLTest() {
-        Automata_Comparacion_ALL al = new Automata_Comparacion_ALL();
-        char[] caracteres = "all".toCharArray();
-        Lexema resultado = al.inicio(new Caracteres(0, caracteres));
+     @Test
+    public void TestAutomataAlterCorrecto() {
+        Automata_Alter alt = new Automata_Alter();
+        char[] caracteres = "alter".toCharArray();
+        Lexema resultado = alt.inicio(new Caracteres(0, caracteres));
         int esperado = 1;
         int resultadoMetodo;
         if (resultado != null) {
@@ -36,15 +36,12 @@ public class Automata_Comparacion_ALLTest {
         assertEquals(esperado, resultadoMetodo);
 
     }
-    
-    
-    
-    
-       @Test
-    public void TestAutomataComparacion_All_InCorrecto() {
-        Automata_Comparacion_ALL al = new Automata_Comparacion_ALL();
-        char[] caracteres = "allllll".toCharArray();
-        Lexema resultado = al.inicio(new Caracteres(0, caracteres));
+
+    @Test
+    public void TestAutomataAlterInCorrecto() {
+        Automata_Alter alt = new Automata_Alter();
+        char[] caracteres = "atler".toCharArray();
+        Lexema resultado = alt.inicio(new Caracteres(0, caracteres));
         int esperado = 0;
         int resultadoMetodo;
         if (resultado != null) {
@@ -56,7 +53,5 @@ public class Automata_Comparacion_ALLTest {
         assertEquals(esperado, resultadoMetodo);
 
     }
-
-   
     
 }
