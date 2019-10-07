@@ -12,7 +12,7 @@ import sintatico.excepciones.SintacticException;
 import definicion.Sentencia;
 import Sentencia.implementaciones.Atributo;
 import Sentencia.implementaciones.Clase;
-import Sentencia.implementaciones.Metodo;
+import Sentencia.implementaciones.Select;
 import gramatica.definiciones.Gramatica;
 import java.util.List;
 import javax.swing.event.TreeModelListener;
@@ -45,10 +45,10 @@ public class GramaticaClase implements Gramatica {
                     //se analiza el cuerpo del metodo.....
                     boolean continuar = true;
                     GramaticaAtributo gramaticaAtributo = new GramaticaAtributo();
-                    GramaticaMetodo gramaticaMetodo = new GramaticaMetodo();
+                    GramaticaSelect gramaticaMetodo = new GramaticaSelect();
                     do {
                         lexema = flujoTokens.avanzar();
-                        Metodo met = gramaticaMetodo.analizar(clase, flujoTokens);
+                        Select met = gramaticaMetodo.analizar(clase, flujoTokens);
                         if (met != null) {
                             clase.getListaMetodos().add(met);
                             continue;

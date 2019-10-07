@@ -28,7 +28,6 @@ public class Analizador_Lexico {
         return listLexema;
     }
 
-    
     public void setListaLexema(List<Lexema> listaLexema) {
         this.listLexema = listaLexema;
     }
@@ -40,8 +39,7 @@ public class Analizador_Lexico {
     public void setListaErrores(List<Lexema> listaErrores) {
         Analizador_Lexico.listaErrores = listaErrores;
     }
-    
-    
+
     public static Caracteres flujo = new Caracteres(0, null);
     int posInicial = 0;
 
@@ -61,20 +59,20 @@ public class Analizador_Lexico {
 
             //------------------ CLASE-------------------------
             Automata_Class();
-            
-           Automata_Alter();
-           Automata_DriverManager();
-           Automata_Create();
-           Automata_DataBase();
-           Automata_Analyze();
-           Automata_Before();
-           Automata_Between();
-           Automata_Cascade();
-           Automata_Select();
-           Automata_Table();
-           Automata_Update();
-           Automata_User();
-           
+
+            Automata_Alter();
+            Automata_DriverManager();
+            Automata_Create();
+            Automata_DataBase();
+            Automata_Analyze();
+            Automata_Before();
+            Automata_Between();
+            Automata_Cascade();
+            Automata_Select();
+            Automata_Table();
+            Automata_Update();
+            Automata_User();
+
             //-----------------OTROS-----------------------------
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
@@ -82,8 +80,7 @@ public class Analizador_Lexico {
             Automata_Comparacion_NOT();
 
             //_------------DELIMITADORES--------------------
-            Automata_Delimitadores();
-
+//            Automata_Delimitadores();
             //--------------COMPARACION--------------
             Automata_Operador_Comparacion();
             Automata_Operador_ComparacionIN();
@@ -131,10 +128,14 @@ public class Analizador_Lexico {
             Automata_Operador_Logico();
 
             Automata_Logico_XOR();
+            Automata_Fields();
+            Automata_Punto();
+            Automata_puntocoma();
+            Automata_Igual();
             //--------OTROS------------------------
             identificadores();
             errores();
-            
+
         }
 
     }
@@ -218,7 +219,38 @@ public class Analizador_Lexico {
         if (lexe != null) {
             listLexema.add(lexe);
         }
+    }
 
+    public void Automata_puntocoma() {
+        Automata_puntocoma classs = new Automata_puntocoma();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Punto() {
+        Automata_punto classs = new Automata_punto();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Igual() {
+        Automata_Igual classs = new Automata_Igual();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+
+    public void Automata_Fields() {
+        Automata_Fields classs = new Automata_Fields();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
     }
 
     public void Automata_Parentesis_Abierto() {

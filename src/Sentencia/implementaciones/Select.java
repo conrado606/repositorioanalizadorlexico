@@ -16,7 +16,7 @@ import javax.swing.tree.TreePath;
  *
  * @author Mauricio
  */
-public class Metodo extends Sentencia {
+public class Select extends Sentencia {
 
     /**
      * Nombre del metodo
@@ -41,7 +41,7 @@ public class Metodo extends Sentencia {
     /**
      * COnstructor
      */
-    public Metodo() {
+    public Select() {
         listaParametros = new Lista<>();
         listaSentencias = new Lista<>();
     }
@@ -54,7 +54,7 @@ public class Metodo extends Sentencia {
      * @param listaParametros
      * @param listaSentencias
      */
-    public Metodo(Lexema nombre, Lexema retorno, Lista<Parametro> listaParametros, Lista<Sentencia> listaSentencias) {
+    public Select(Lexema nombre, Lexema retorno, Lista<Parametro> listaParametros, Lista<Sentencia> listaSentencias) {
         this.nombre = nombre;
         this.retorno = retorno;
         this.listaParametros = listaParametros;
@@ -81,7 +81,7 @@ public class Metodo extends Sentencia {
 
     @Override
     public String toString() {
-        return "Metodo:  " + nombre.getToken();
+        return "Select:  " + nombre.getToken();
     }
 
     public Lexema getNombre() {
@@ -118,14 +118,9 @@ public class Metodo extends Sentencia {
 
     @Override
     public String parse() {
-        StringBuilder str = new StringBuilder();
-        str.append("metodo ");
 
-        str.append("con nombre ").append(nombre.getToken());
-        str.append(" y paramatros:  ").append(listaParametros.parse());
-        str.append(" retornando ").append(retorno.getToken());
 
-        return str.toString();
+        return null;
     }
 
 }

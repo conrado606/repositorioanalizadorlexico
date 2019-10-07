@@ -10,7 +10,7 @@ import gramatica.definiciones.Gramatica;
 import Modelo.Lexema;
 import Sentencia.implementaciones.Atributo;
 import definicion.Sentencia;
-import Sentencia.implementaciones.Metodo;
+import Sentencia.implementaciones.Select;
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreePath;
 
