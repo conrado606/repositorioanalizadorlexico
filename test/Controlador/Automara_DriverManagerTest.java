@@ -18,13 +18,13 @@ import static org.junit.Assert.*;
  *
  * @author Acer
  */
-public class Automata_Comparacion_ALLTest {
+public class Automara_DriverManagerTest {
     
-    @Test
-    public void Automata_Comparacion_ALLTest() {
-        Automata_Comparacion_ALL al = new Automata_Comparacion_ALL();
-        char[] caracteres = "all".toCharArray();
-        Lexema resultado = al.inicio(new Caracteres(0, caracteres));
+   @Test
+    public void TestAutomataDriverManagerCorrecto() {
+        Automara_DriverManager dm = new Automara_DriverManager();
+        char[] caracteres = "drivermanager".toCharArray();
+        Lexema resultado = dm.inicio(new Caracteres(0, caracteres));
         int esperado = 1;
         int resultadoMetodo;
         if (resultado != null) {
@@ -36,15 +36,12 @@ public class Automata_Comparacion_ALLTest {
         assertEquals(esperado, resultadoMetodo);
 
     }
-    
-    
-    
-    
-       @Test
-    public void TestAutomataComparacion_All_InCorrecto() {
-        Automata_Comparacion_ALL al = new Automata_Comparacion_ALL();
-        char[] caracteres = "allllll".toCharArray();
-        Lexema resultado = al.inicio(new Caracteres(0, caracteres));
+
+    @Test
+    public void TestAutomataDriverManagerInCorrecto() {
+        Automara_DriverManager dm = new Automara_DriverManager();
+        char[] caracteres = "driver".toCharArray();
+        Lexema resultado = dm.inicio(new Caracteres(0, caracteres));
         int esperado = 0;
         int resultadoMetodo;
         if (resultado != null) {
@@ -56,7 +53,5 @@ public class Automata_Comparacion_ALLTest {
         assertEquals(esperado, resultadoMetodo);
 
     }
-
-   
     
 }
