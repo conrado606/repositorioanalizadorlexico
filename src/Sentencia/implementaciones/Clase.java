@@ -22,7 +22,7 @@ public class Clase extends Sentencia {
     /**
      * Lista de metodos de la clase....
      */
-    private Lista<Metodo> listaMetodos;
+    private Lista<Select> listaMetodos;
 
     /**
      * Lista de atributos de la clase.
@@ -59,11 +59,11 @@ public class Clase extends Sentencia {
         return "Clase:" + nombreClase.getToken();
     }
 
-    public Lista<Metodo> getListaMetodos() {
+    public Lista<Select> getListaMetodos() {
         return listaMetodos;
     }
 
-    public void setListaMetodos(Lista<Metodo> listaMetodos) {
+    public void setListaMetodos(Lista<Select> listaMetodos) {
         this.listaMetodos = listaMetodos;
     }
 
