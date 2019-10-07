@@ -132,6 +132,7 @@ public class Analizador_Lexico {
             Automata_Punto();
             Automata_puntocoma();
             Automata_Igual();
+            Automata_Exp();
             //--------OTROS------------------------
             identificadores();
             errores();
@@ -215,6 +216,14 @@ public class Analizador_Lexico {
     //-----------PALABRAS RESERVADAS ----------------------
     public void Automata_Class() {
         Automata_Class classs = new Automata_Class();
+        lexe = classs.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+    
+     public void Automata_Exp() {
+        Automata_Exp classs = new Automata_Exp();
         lexe = classs.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
