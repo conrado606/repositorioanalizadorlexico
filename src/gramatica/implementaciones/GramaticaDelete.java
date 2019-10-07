@@ -27,7 +27,7 @@ public class GramaticaDelete implements Gramatica {
 
         //tipo de retorno.....
         if (lexema.getTipoLexema().equals("palabra reservada")) {
-            metodo.setRetorno(lexema);
+//            metodo.setRetorno(lexema);
             lexema = flujoTokens.avanzar();
             if (lexema == null) {
                 throw new SintacticException(new Lexema("", ""), "Palabra");

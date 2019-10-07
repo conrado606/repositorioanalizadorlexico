@@ -26,62 +26,27 @@ public class Select extends Sentencia {
     /**
      * Tipo de retorno.
      */
-    private Lexema retorno;
+    private List<Lexema> listalexemas;
 
     /**
      * Lista de parametros.
      */
-    private Lista<Parametro> listaParametros;
+    private Condicion condicion;
 
     /**
      * Instrucciones dentro del metodo.
      */
-    private Lista<Sentencia> listaSentencias;
-
     /**
      * COnstructor
      */
     public Select() {
-        listaParametros = new Lista<>();
-        listaSentencias = new Lista<>();
+        listalexemas = new ArrayList<>();
     }
 
-    /**
-     * Constructor.
-     *
-     * @param nombre
-     * @param retorno
-     * @param listaParametros
-     * @param listaSentencias
-     */
-    public Select(Lexema nombre, Lexema retorno, Lista<Parametro> listaParametros, Lista<Sentencia> listaSentencias) {
+    public Select(Lexema nombre, List<Lexema> listalexemas, Condicion condicion) {
         this.nombre = nombre;
-        this.retorno = retorno;
-        this.listaParametros = listaParametros;
-        this.listaSentencias = listaSentencias;
-    }
-
-    @Override
-    public List<Sentencia> llenarHijos() {
-
-        hijos = new ArrayList<>();
-
-        hijos.add(new SentenciaToken(retorno));
-        hijos.add(new SentenciaToken(nombre));
-
-        if (!listaParametros.getSentencias().isEmpty()) {
-            hijos.add(listaParametros);
-        }
-        if (!listaSentencias.getSentencias().isEmpty()) {
-            hijos.add(listaSentencias);
-        }
-        return hijos;
-
-    }
-
-    @Override
-    public String toString() {
-        return "Select:  " + nombre.getToken();
+        this.listalexemas = listalexemas;
+        this.condicion = condicion;
     }
 
     public Lexema getNombre() {
@@ -92,33 +57,63 @@ public class Select extends Sentencia {
         this.nombre = nombre;
     }
 
-    public Lexema getRetorno() {
-        return retorno;
+    public List<Lexema> getListalexemas() {
+        return listalexemas;
     }
 
-    public void setRetorno(Lexema retorno) {
-        this.retorno = retorno;
+    public void setListalexemas(List<Lexema> listalexemas) {
+        this.listalexemas = listalexemas;
     }
 
-    public Lista<Parametro> getListaParametros() {
-        return listaParametros;
+    public Condicion getCondicion() {
+        return condicion;
     }
 
-    public void setListaParametros(Lista<Parametro> listaParametros) {
-        this.listaParametros = listaParametros;
+    public void setCondicion(Condicion condicion) {
+        this.condicion = condicion;
     }
 
-    public Lista<Sentencia> getListaSentencias() {
-        return listaSentencias;
+    public Sentencia getRoot() {
+        return root;
     }
 
-    public void setListaSentencias(Lista<Sentencia> listaSentencias) {
-        this.listaSentencias = listaSentencias;
+    public void setRoot(Sentencia root) {
+        this.root = root;
+    }
+
+    public List<Sentencia> getHijos() {
+        return hijos;
+    }
+
+    public void setHijos(List<Sentencia> hijos) {
+        this.hijos = hijos;
+    }
+
+    @Override
+    public List<Sentencia> llenarHijos() {
+
+        hijos = new ArrayList<>();
+
+//        hijos.add(new SentenciaToken(retorno));
+        hijos.add(new SentenciaToken(nombre));
+
+//        if (!listaParametros.getSentencias().isEmpty()) {
+//            hijos.add(listaParametros);
+//        }
+//        if (!listaSentencias.getSentencias().isEmpty()) {
+//            hijos.add(listaSentencias);
+//        }
+        return hijos;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Select:  " + nombre.getToken();
     }
 
     @Override
     public String parse() {
-
 
         return null;
     }

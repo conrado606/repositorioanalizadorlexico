@@ -25,14 +25,14 @@ import javax.swing.tree.TreePath;
  */
 public class GramaticaClase implements Gramatica {
 
-     @Override
+    @Override
     public Clase analizar(Sentencia raiz, FlujoTokens flujoTokens) {
 
         Clase clase = new Clase();
         Lexema lexema = flujoTokens.getTokenActual();
 
         //palabra reservada class....
-        if (lexema.getToken().equals("clase")) {
+        if (lexema.getToken().equals("class")) {
             lexema = flujoTokens.avanzar();
             if (lexema == null) {
                 throw new SintacticException(new Lexema("", ""), "Identificador");
@@ -68,12 +68,15 @@ public class GramaticaClase implements Gramatica {
 
                         return clase;
                     } else {//si no se termina con llave cerrada, excepcion...
-                        throw new SintacticException(lexema, "Llave cerrada");
+////                        throw new SintacticException(lexema, "Llave cerrada");
                     }
 
                 } else {//si no se empieza con llave abierta, error.
                     throw new SintacticException(lexema, "Llave abierta");
                 }
+            } else {
+                throw new SintacticException(lexema, "Identificador");
+
             }
 
         } else {
@@ -81,6 +84,7 @@ public class GramaticaClase implements Gramatica {
             return null;
         }
         return null;
+    
     }
-
+   
 }
