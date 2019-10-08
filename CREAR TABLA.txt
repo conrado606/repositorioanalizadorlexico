@@ -1,0 +1,6 @@
+crear_tabla::= 'palabra' 'palabra' identificador '(' columna 'delimitador' columna 'delimitador'columna')' 'delimitador'
+palabra::= (create table)
+dato ::= (varchar | integer |bit| date | char | float | decimal | data_time | text)
+columna ::= identificador 'dato' (longitud) (NOT NULL)?
+delimitador ::= ',' ';'
+longitud ::= ('10''15''25''35''45''56''78''100')

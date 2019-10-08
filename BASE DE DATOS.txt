@@ -1,0 +1,3 @@
+base_Datos::= 'palabra' 'palabra' identificador 'delimitador'
+palabra::= create | database
+delimitador ::= ';'

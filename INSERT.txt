@@ -1,0 +1,4 @@
+insert ::= palabra identificador '(' campos_tabla ')' palabra '(' (valores 'delimitador' valores 'delimitador' valores) ')'delimitador
+palabra ::= (insert)|(into)|(values)
+valores ::= (ejemplo)
+delimitador ::= ';'| ','

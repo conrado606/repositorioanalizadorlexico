@@ -1,0 +1,29 @@
+asignar ::='palabra''palabra'',''palabra'',''palabra' 'en' (nombre_bd | nombre_tabla)'a' nombre_usuario
+palabra ::=(GRANT|SELECT|INSERT|UPDATE|UPDATE|DELETE|CREATE|DROP)
+en::= (ON)
+a::=(TO)
+
+
+-------------------------------------------------------------
+REVOCAR ALL PERMISOS
+
+revocar ::= 'PALABRA' 'PALABRA' 'PALABRA' 'EN' (NOMBRE_BD|NOMBRE_TABLA) 'palabra' NOMBRE_USUARIO 'DELIMITADOR'
+palabra::= (REVOKE | ALL | PRIVILEGES | FROM)
+EN::= ON
+DELIMITADOR::= ';'
+
+--------------------------------------------------------------
+
+REVOCAR ALGUNOS PERMISOS
+
+revocarP ::= 'PALABRA' 'CRUD' 'EN' (NOMBRE_BD|NOMBRE_TABLA) 'palabra' NOMBRE_USUARIO 'DELIMITADOR'
+palabra::= (REVOKE| FROM)
+CRUD::= (CREATE | UPDATE | DELETE | INSERT)
+EN::= ON
+DELIMITADOR::= ';'
+--------------------------------------------------------------------
+ELIMINAR USUARIO
+
+BORRAR_USUARIO::= 'PALABRA' ('PALABRA' NOMBRE_USUARIO)'DELIMITADOR'
+PALABRA::=(DROP|USER)
+DELIMIADOR::=';'
