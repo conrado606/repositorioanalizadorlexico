@@ -1,0 +1,7 @@
+crear_usuario::= 'palabra' 'palabra' nickname 'palabra' 'palabra' 'password' 'delimitador'
+nickname ::= (letra|digito|letra|digito)
+password ::= (letra|digito|letra|digito)
+DIGITO ::= [0-9]
+LETRA::= [a-zA-Z]
+palabra ::= (CREATE | USER | IDENTIFIED | BY)
+delimitador ::= ';'
