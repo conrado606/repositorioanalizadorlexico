@@ -91,6 +91,7 @@ public class Analizador_Lexico {
             Automata_Comparacion_IS_NOT_NULL();
             Automata_Comparacion_ALL();
             Automata_Comparacion_ANY();
+            Automatas_Coma();
 
             //-------------OPERADOR ARITMETICO-------------------
             Automata_Operador_Aritmetico();
@@ -133,6 +134,7 @@ public class Analizador_Lexico {
             Automata_puntocoma();
             Automata_Igual();
             Automata_Exp();
+            
             //--------OTROS------------------------
             identificadores();
             errores();
@@ -1109,6 +1111,14 @@ public class Analizador_Lexico {
     public void Automatas_add() {
         Automatas_add driver = new Automatas_add();
         lexe = driver.inicio(flujo);
+        if (lexe != null) {
+            listLexema.add(lexe);
+        }
+    }
+    
+      public void Automatas_Coma() {
+        Automata_Coma coma = new Automata_Coma();
+        lexe = coma.inicio(flujo);
         if (lexe != null) {
             listLexema.add(lexe);
         }
